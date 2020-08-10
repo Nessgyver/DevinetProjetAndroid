@@ -1,6 +1,7 @@
 package com.example.devinet.repository;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.devinet.bo.Categorie;
 import com.example.devinet.bo.Mot;
@@ -16,5 +17,5 @@ public interface IMotRepository {
     void update(Mot mot);
     void delete(Mot mot);
     LiveData<List<Mot>> get();
-    LiveData<List<Mot>> get(int idCategorie);
+    MutableLiveData<List<Mot>> get(int idCategorie);
 }
