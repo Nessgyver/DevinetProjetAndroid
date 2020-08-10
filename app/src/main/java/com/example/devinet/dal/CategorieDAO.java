@@ -12,7 +12,7 @@ import com.example.devinet.bo.Categorie;
 import java.util.List;
 
 /**
- * Cette classe permet de donner les consifnes nécessaires à Room
+ * Cette classe permet de donner les consignes nécessaires à Room
  * pour les interactions avec la base de données
  */
 @Dao
@@ -22,7 +22,7 @@ public interface CategorieDAO {
     void insert(Categorie categorie);
 
     @Insert
-    void insert(Categorie ... categorie);
+    void insert(Categorie ... categories);
 
     @Query("SELECT * FROM Categorie")
     LiveData<List<Categorie>> get();
