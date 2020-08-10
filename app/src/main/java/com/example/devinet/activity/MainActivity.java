@@ -20,4 +20,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SelectionNiveauActivity.class);
         startActivity(intent);
     }
+
+    public void onClickResults(View view) {
+        Intent intent = new Intent(this, AfficherResultatsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickProposer(View view) {
+        Intent intent = new Intent(this, NouvellePropositionActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickQuitter(View view) {
+        Intent intent = new Intent(this, QuitterApplicationActivity.class);
+        startActivity(intent);
+    }
 }
