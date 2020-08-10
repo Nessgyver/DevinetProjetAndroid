@@ -1,6 +1,10 @@
 package com.example.devinet.bo;
 
+import androidx.room.Entity;
+
+@Entity
 public class Mot {
+
     private int id;
     private String image;
     private String mot;
