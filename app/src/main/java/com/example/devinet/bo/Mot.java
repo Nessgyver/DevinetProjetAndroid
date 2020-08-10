@@ -1,23 +1,39 @@
 package com.example.devinet.bo;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(foreignKeys = @ForeignKey(entity = Categorie.class,
+        parentColumns = "id",
+        childColumns = "idCategorie"))
 public class Mot {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String image;
     private String mot;
     private String proposition;
-    private Categorie categorie;
+    private int idCategorie;
 
+    @Ignore
     public Mot() {
     }
 
-    public Mot(String image, String mot, Categorie categorie) {
+    @Ignore
+    public Mot(String image, String mot, int idCategorie) {
         this.image = image;
         this.mot = mot;
-        this.categorie = categorie;
+        this.idCategorie = idCategorie;
+    }
+
+    public Mot(int id, String image, String mot, String proposition, int idCategorie) {
+        this.id = id;
+        this.image = image;
+        this.mot = mot;
+        this.proposition = proposition;
+        this.idCategorie = idCategorie;
     }
 
     public int getId() {
@@ -52,12 +68,12 @@ public class Mot {
         this.proposition = proposition;
     }
 
-    public Categorie getCategorie() {
-        return categorie;
+    public int getIdCategorie() {
+        return idCategorie;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
+    public void setIdCategorie(int idCategorie) {
+        this.idCategorie = idCategorie;
     }
 
     @Override
@@ -67,7 +83,7 @@ public class Mot {
                 ", image='" + image + '\'' +
                 ", mot='" + mot + '\'' +
                 ", proposition='" + proposition + '\'' +
-                ", categorie=" + categorie +
+                ", categorie=" + idCategorie +
                 '}';
     }
 }

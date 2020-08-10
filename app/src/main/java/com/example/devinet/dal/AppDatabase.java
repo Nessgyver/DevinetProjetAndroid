@@ -51,12 +51,12 @@ public abstract class AppDatabase extends RoomDatabase {
 
                     //ajoutes des mots dans la base de données
                     MotDAO daoMot = INSTANCE.getMotDAO();
-                    daoMot.insert(new Mot("", "chat", quatreLettres),
-                            new Mot("", "vélo", quatreLettres),
-                            new Mot("", "chien", cinqLettres),
-                            new Mot("", "tasse", cinqLettres),
-                            new Mot("", "chaise", sixLettres),
-                            new Mot("","montre", sixLettres));
+                    daoMot.insert(new Mot("", "chat", quatreLettres.getId()),
+                            new Mot("", "vélo", quatreLettres.getId()),
+                            new Mot("", "chien", cinqLettres.getId()),
+                            new Mot("", "tasse", cinqLettres.getId()),
+                            new Mot("", "chaise", sixLettres.getId()),
+                            new Mot("","montre", sixLettres.getId()));
                     return null;
                 }
             }.execute(INSTANCE);

@@ -27,8 +27,8 @@ public interface MotDAO {
     @Query("SELECT * FROM Mot")
     LiveData<List<Mot>> get();
 
-    @Query("SELECT * FROM Mot WHERE Categorie = :categorie")
-    List<Mot> get(Categorie categorie);
+    @Query("SELECT * FROM Mot WHERE idCategorie = :idCategorie")
+    List<Mot> get(int idCategorie);
 
     @Update
     void update(Mot mot);
