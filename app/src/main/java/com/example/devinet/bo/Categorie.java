@@ -11,8 +11,7 @@ public class Categorie {
     public Categorie() {
     }
 
-    public Categorie(int id, String nom) {
-        this.id = id;
+    public Categorie(String nom) {
         this.nom = nom;
     }
 

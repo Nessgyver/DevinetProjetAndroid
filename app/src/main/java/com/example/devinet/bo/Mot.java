@@ -14,11 +14,9 @@ public class Mot {
     public Mot() {
     }
 
-    public Mot(int id, String image, String mot, String proposition, Categorie categorie) {
-        this.id = id;
+    public Mot(String image, String mot, Categorie categorie) {
         this.image = image;
         this.mot = mot;
-        this.proposition = proposition;
         this.categorie = categorie;
     }
 
