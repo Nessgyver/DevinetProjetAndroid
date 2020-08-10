@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import com.example.devinet.bo.Mot;
 import com.example.devinet.dal.AppDatabase;
@@ -16,7 +15,6 @@ import java.util.List;
 public class MotBddRepository implements IMotRepository {
 
     private MotDAO daoMot;
-    private MutableLiveData<List<Mot>> motCategorie;
 
     public MotBddRepository(Context context) {
         //Instance de ma Bdd
@@ -76,8 +74,7 @@ public class MotBddRepository implements IMotRepository {
     }
 
     @Override
-    public MutableLiveData<List<Mot>> get(int idCategorie) {
-        motCategorie.setValue(daoMot.get(idCategorie));
-        return motCategorie;
+    public List<Mot> get(int idCategorie) {
+        return daoMot.get(idCategorie);
     }
 }

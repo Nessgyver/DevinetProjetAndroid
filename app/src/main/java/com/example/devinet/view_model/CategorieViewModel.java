@@ -23,9 +23,6 @@ public class CategorieViewModel extends AndroidViewModel {
         categoriesObs = categorieRepository.get();
     }
 
-    public LiveData<List<Categorie>> get(){
-        return categoriesObs;
-    }
 
     public void insert(Categorie categorie){
         categorieRepository.insert();
@@ -33,6 +30,10 @@ public class CategorieViewModel extends AndroidViewModel {
 
     public void insert(Categorie ... categories){
         categorieRepository.insert(categories);
+    }
+
+    public LiveData<List<Categorie>> get(){
+        return categoriesObs;
     }
 
     public LiveData<Categorie> get(int idCategorie){
