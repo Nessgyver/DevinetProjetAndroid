@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toolbar;
 
 import com.example.devinet.R;
 
+/**
+ * Contrôleur de l'écran d'accueil de l'application
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

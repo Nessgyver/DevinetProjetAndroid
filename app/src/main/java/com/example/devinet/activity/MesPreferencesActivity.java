@@ -12,6 +12,9 @@ import android.widget.Switch;
 
 import com.example.devinet.R;
 
+/**
+ * Contrôleur de l'IHM des choix de paramètres de l'utilisateur
+ */
 public class MesPreferencesActivity extends AppCompatActivity {
 
     public static final String CLE_SON = "son";
@@ -31,9 +34,12 @@ public class MesPreferencesActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        //on récupère les switch qui permettent de connaitre les paramètres de l'utilisateur
         sb_son = findViewById(R.id.sb_son);
         sb_vibration = findViewById(R.id.sb_vibration);
 
+        //on leur affecte la valeur enregistrée dans le fichier
         SharedPreferences sp = getSharedPreferences(NOM_FICHIER, MODE_PRIVATE);
         sb_son.setChecked(sp.getBoolean(CLE_SON, true));
         sb_vibration.setChecked(sp.getBoolean(CLE_VIBRATION, true));
@@ -70,6 +76,7 @@ public class MesPreferencesActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
+        //dès que la page est quittée, on enregistre les paramètres
         SharedPreferences sp = getSharedPreferences(NOM_FICHIER, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean(CLE_SON, sb_son.isChecked());
