@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.QuitterApplicationActivity"></activity>
+        <activity android:name=".activity.AProposActivity"></activity>
+        <activity android:name=".activity.MesPreferencesActivity" />
+        <activity android:name=".activity.QuitterApplicationActivity" />
         <activity android:name=".activity.NouvellePropositionActivity" />
         <activity android:name=".activity.AfficherResultatsActivity" />
         <activity android:name=".activity.SelectionNiveauActivity" />

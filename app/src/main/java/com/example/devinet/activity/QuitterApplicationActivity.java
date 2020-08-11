@@ -17,7 +17,7 @@ public class QuitterApplicationActivity extends AppCompatActivity {
     }
 
     public void onClickConfirmer(View view) {
-        Toast.makeText(this, "Confirmé", Toast.LENGTH_SHORT).show();
+        this.finishAffinity();
     }
 
     public void onClickAnnuler(View view) {

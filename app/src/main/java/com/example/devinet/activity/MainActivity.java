@@ -1,10 +1,14 @@
 package com.example.devinet.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toolbar;
 
 import com.example.devinet.R;
 
@@ -14,6 +18,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mon_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_preferences:
+                Intent intentPreferences = new Intent(this, MesPreferencesActivity.class);
+                startActivity(intentPreferences);
+                return true;
+            case R.id.action_a_propos:
+                Intent intentAPropos = new Intent(this, AProposActivity.class);
+                startActivity(intentAPropos);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void onClickJouer(View view) {
