@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".activity.MesPreferencesActivity">
 
+    <TextView
+        android:id="@+id/tv_son"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activer les sons "
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/sb_son"
+        />
+
+    <Switch
+        android:id="@+id/sb_son"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv_son"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_vibration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activer les vibrations "
+        app:layout_constraintTop_toBottomOf="@id/tv_son"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/sb_son"
+        />
+
+    <Switch
+        android:id="@+id/sb_vibration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        app:layout_constraintTop_toBottomOf="@id/sb_son"
+        app:layout_constraintLeft_toRightOf="@id/tv_son"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
