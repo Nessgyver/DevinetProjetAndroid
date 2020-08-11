@@ -13,6 +13,9 @@
         app:layout_constraintRight_toRightOf="parent"
         android:text="XXX"
         android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="25dp"
         />
 
     <TextView
@@ -28,12 +31,23 @@
         android:id="@+id/pb_ligne_niveau"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_progression"
         android:layout_margin="20dp"
         android:min="0"
         android:max="100"
         android:progress="33"
+        style="?android:attr/progressBarStyleHorizontal"
+        />
+
+    <Button
+        android:id="@+id/btn_reinitialiser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réinitialiser"
+        android:onClick="onClickReinitialiser"
+        app:layout_constraintTop_toBottomOf="@id/pb_ligne_niveau"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

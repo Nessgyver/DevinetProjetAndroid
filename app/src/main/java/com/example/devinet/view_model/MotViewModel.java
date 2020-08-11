@@ -49,4 +49,20 @@ public class MotViewModel extends AndroidViewModel {
     public void delete(Mot mot){
         motRepository.delete(mot);
     }
+
+//    public LiveData<Integer> getProgressionCategorie(int idCategorie){
+//        LiveData<Integer> progression = null;
+//        int motOk = 0;
+//
+//        List<Mot> listeMots = motRepository.get(idCategorie);
+//
+//        for (int i = 0; i < listeMots.size(); i++) {
+//            Mot motCourant = listeMots.get(i);
+//            if(motCourant.getMot().equals(motCourant.getProposition())){
+//                motOk++;
+//            }
+//        }
+//
+//        return progression.motOk / listeMots.size()*100;
+//    }
 }
