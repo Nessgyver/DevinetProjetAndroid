@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activity.AProposActivity">
 
+    <TextView
+        android:id="@+id/text_dev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Application développée par :"
+        app:layout_constraintBottom_toTopOf="@+id/nom_dev"
+        android:layout_margin="50dp"
+        />
+
+    <TextView
+        android:id="@+id/nom_dev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Damien Rouxel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
