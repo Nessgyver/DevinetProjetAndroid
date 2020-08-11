@@ -14,4 +14,10 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/action_retour"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_back"
+        />
+
 </menu>

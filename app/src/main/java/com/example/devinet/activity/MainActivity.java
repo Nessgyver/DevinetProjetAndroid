@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mon_menu, menu);
+        menu.findItem(R.id.action_retour).setVisible(false);
         return true;
     }
 
