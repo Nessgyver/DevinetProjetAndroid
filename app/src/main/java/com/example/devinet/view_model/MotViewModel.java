@@ -45,9 +45,11 @@ public class MotViewModel extends AndroidViewModel {
         motRepository.update(mot);
     }
 
+    public void update(int idCategorie){
+        motRepository.update(idCategorie);
+    }
+
     public void delete(Mot mot){
         motRepository.delete(mot);
     }
-
-
 }

@@ -58,6 +58,17 @@ public class MotBddRepository implements IMotRepository {
     }
 
     @Override
+    public void update(int idCategorie) {
+        new AsyncTask<Integer, Void, Void>() {
+            @Override
+            protected Void doInBackground(Integer... integers) {
+                daoMot.update(integers[0]);
+                return null;
+            }
+        }.execute(idCategorie);
+    }
+
+    @Override
     public void delete(Mot mot) {
         new AsyncTask<Mot, Void, Void>(){
             @Override

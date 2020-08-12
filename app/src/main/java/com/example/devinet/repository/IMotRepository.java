@@ -14,6 +14,7 @@ public interface IMotRepository {
     void insert(Mot mot);
     void insert(Mot ... mot);
     void update(Mot mot);
+    void update(int idCategorie);
     void delete(Mot mot);
     LiveData<List<Mot>> get();
     LiveData<List<Mot>> get(int idCategorie);

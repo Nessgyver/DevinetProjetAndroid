@@ -24,15 +24,18 @@ public interface MotDAO {
     @Insert
     void insert(Mot ... mots);
 
+    @Update
+    void update(Mot mot);
+
+    @Query("UPDATE Mot SET proposition = null WHERE idCategorie = :idCategorie")
+    void update(int idCategorie);
+
+    @Delete
+    void delete(Mot mot);
+
     @Query("SELECT * FROM Mot")
     LiveData<List<Mot>> get();
 
     @Query("SELECT * FROM Mot WHERE idCategorie = :idCategorie")
     LiveData<List<Mot>> get(int idCategorie);
-
-    @Update
-    void update(Mot mot);
-
-    @Delete
-    void delete(Mot mot);
 }
