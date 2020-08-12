@@ -17,6 +17,14 @@ public class TrouverMotActivity extends AppCompatActivity {
     }
 
     public void onClickAjouterLettre(View view) {
-        Toast.makeText(this, view.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();   Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClickPasser(View view) {
+        Toast.makeText(this, "onClickPasser", Toast.LENGTH_SHORT).show();   Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClickValider(View view) {
+        Toast.makeText(this, "onClickValider", Toast.LENGTH_SHORT).show();   Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();
     }
 }
