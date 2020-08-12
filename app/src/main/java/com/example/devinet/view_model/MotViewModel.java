@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 import com.example.devinet.bo.Mot;
 import com.example.devinet.repository.AppRepositoryFactory;
@@ -17,7 +18,6 @@ public class MotViewModel extends AndroidViewModel {
 
     private IMotRepository motRepository;
     private LiveData<List<Mot>> motsObs;
-    private MutableLiveData<List<Mot>> motsSpeObs;
 
     public MotViewModel(@NonNull Application application) {
         super(application);
@@ -37,9 +37,8 @@ public class MotViewModel extends AndroidViewModel {
         return motsObs;
     }
 
-    public MutableLiveData<List<Mot>> get(int idCategorie){
-        motsSpeObs.setValue(motRepository.get(idCategorie));
-        return motsSpeObs;
+    public LiveData<List<Mot>> get(int idCategorie){
+        return motRepository.get(idCategorie);
     }
 
     public void update(Mot mot){
@@ -50,19 +49,5 @@ public class MotViewModel extends AndroidViewModel {
         motRepository.delete(mot);
     }
 
-//    public LiveData<Integer> getProgressionCategorie(int idCategorie){
-//        LiveData<Integer> progression = null;
-//        int motOk = 0;
-//
-//        List<Mot> listeMots = motRepository.get(idCategorie);
-//
-//        for (int i = 0; i < listeMots.size(); i++) {
-//            Mot motCourant = listeMots.get(i);
-//            if(motCourant.getMot().equals(motCourant.getProposition())){
-//                motOk++;
-//            }
-//        }
-//
-//        return progression.motOk / listeMots.size()*100;
-//    }
+
 }

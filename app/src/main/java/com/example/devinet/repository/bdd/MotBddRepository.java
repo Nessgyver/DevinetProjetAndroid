@@ -74,7 +74,7 @@ public class MotBddRepository implements IMotRepository {
     }
 
     @Override
-    public List<Mot> get(int idCategorie) {
+    public LiveData<List<Mot>> get(int idCategorie) {
         return daoMot.get(idCategorie);
     }
 }

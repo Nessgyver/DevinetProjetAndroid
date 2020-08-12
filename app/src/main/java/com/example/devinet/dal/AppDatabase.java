@@ -2,6 +2,7 @@ package com.example.devinet.dal;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -37,9 +38,9 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            final Categorie quatreLettres = new Categorie("4 lettres");
-            final Categorie cinqLettres = new Categorie("5 lettres");
-            final Categorie sixLettres = new Categorie("6 lettres");
+            final Categorie quatreLettres = new Categorie(1,"4 lettres");
+            final Categorie cinqLettres = new Categorie(2,"5 lettres");
+            final Categorie sixLettres = new Categorie(3,"6 lettres");
 
             new AsyncTask<AppDatabase, Void, Void>(){
 
@@ -49,14 +50,28 @@ public abstract class AppDatabase extends RoomDatabase {
                     CategorieDAO daoCategorie = INSTANCE.getCategorieDAO();
                     daoCategorie.insert(quatreLettres, cinqLettres, sixLettres);
 
-                    //ajoutes des mots dans la base de données
+                    Log.i("drou", quatreLettres.toString() );
+
+                    return null;
+                }
+            }.execute(INSTANCE);
+
+            //ajoutes des mots dans la base de données
+            final Mot chat = new Mot(0, "","chat","", quatreLettres.getId());
+            final Mot velo = new Mot(0,"", "vélo","vélo", quatreLettres.getId());
+            final Mot chien =  new Mot(0,"", "chien","", cinqLettres.getId());
+            final Mot tasse = new Mot(0,"", "tasse","stase", cinqLettres.getId());
+            final Mot chaise = new Mot(0,"", "chaise","", sixLettres.getId());
+            final Mot montre = new Mot(0,"","montre", "",sixLettres.getId());
+
+            new AsyncTask<AppDatabase, Void, Void>(){
+
+                @Override
+                protected Void doInBackground(AppDatabase... appDatabases) {
+                    // ajoute des Mots dans la base de données
                     MotDAO daoMot = INSTANCE.getMotDAO();
-                    daoMot.insert(new Mot("", "chat", quatreLettres.getId()),
-                            new Mot("", "vélo", quatreLettres.getId()),
-                            new Mot("", "chien", cinqLettres.getId()),
-                            new Mot("", "tasse", cinqLettres.getId()),
-                            new Mot("", "chaise", sixLettres.getId()),
-                            new Mot("","montre", sixLettres.getId()));
+                    daoMot.insert(chat, velo, chien, tasse, chaise, montre);
+
                     return null;
                 }
             }.execute(INSTANCE);
