@@ -62,15 +62,18 @@ public class TrouverMotActivity extends AppCompatActivity {
     }
 
     public void onClickAjouterLettre(View view) {
-        Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();   Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();
+        View parentRow = (View) view.getParent();
+        Button btnLettreCliquee = (Button) parentRow.getParent();
+        String lettreCliquee = btnLettreCliquee.getText().toString();
+        Toast.makeText(this, lettreCliquee, Toast.LENGTH_SHORT).show();
     }
 
     public void onClickPasser(View view) {
-        Toast.makeText(this, "onClickPasser", Toast.LENGTH_SHORT).show();   Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "onClickPasser", Toast.LENGTH_SHORT).show();
     }
 
     public void onClickValider(View view) {
-        Toast.makeText(this, "onClickValider", Toast.LENGTH_SHORT).show();   Toast.makeText(this, "onClickAjouterLettre", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "onClickValider", Toast.LENGTH_SHORT).show();
     }
 
     private void initialiserVue(){
@@ -102,6 +105,10 @@ public class TrouverMotActivity extends AppCompatActivity {
         }
 
         String proposition = motCourant.getProposition();
+        remplirCasesProposition(proposition);
+    }
+
+    private void remplirCasesProposition(String proposition) {
         for (int i = 0; i < 6; i++) {
             if (proposition != null){
                 if(i < proposition.length()){
