@@ -93,6 +93,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="20dp"
         android:src="@drawable/ic_erase"
+        android:onClick="onClickEffacer"
         />
 
     <Button

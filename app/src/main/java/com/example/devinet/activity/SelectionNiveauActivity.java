@@ -34,6 +34,7 @@ public class SelectionNiveauActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selection_niveau);
         cvm = ViewModelProviders.of(this).get(CategorieViewModel.class);
         mvm = ViewModelProviders.of(this).get(MotViewModel.class);
+        obsCategories = cvm.get();
         listeNiveau = findViewById(R.id.lv_niveau);
 
         listeNiveau.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -51,7 +52,6 @@ public class SelectionNiveauActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        obsCategories = cvm.get();
 
         obsCategories.observe(this, new Observer<List<Categorie>>() {
             @Override
